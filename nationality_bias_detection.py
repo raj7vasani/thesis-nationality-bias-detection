@@ -97,7 +97,7 @@ def select_fullnames_matching_token_len(
         target_len: int,
         tolerance: int,
         needed: int,
-        seed: int = 2025,
+        seed: int = 42,
         debug_label: str = "",
         debug: bool = False,
 ) -> list[tuple[str, str]]:
@@ -598,7 +598,7 @@ def parse_args():
                    help="GPU offload (CUDA build: set >0 or -1; CPU-only builds keep 0).")
     p.add_argument("--n-threads", type=int, default=os.cpu_count() or 4,
                    help="Inference threads.")
-    p.add_argument("--seed", type=int, default=2025, help="Random seed.")
+    p.add_argument("--seed", type=int, default=42, help="Random seed.")
     return p.parse_args()
 
 def main():
